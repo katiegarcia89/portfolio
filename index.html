@@ -136,6 +136,7 @@
             <a href="projects/indian-creek.html">Case study →</a>
             <a href="https://www.indiancreekcycles.com" target="_blank" rel="noopener">Live site ↗</a>
             <a href="https://gitlab.com/katiegarcia/indian-creek-cycles" target="_blank" rel="noopener">GitLab ↗</a>
+            <a href="https://github.com/katiegarcia89/indian-creek-cycles" target="_blank" rel="noopener">GitHub ↗</a>
           </div>
         </div>
       </article>
@@ -186,23 +187,45 @@
     <div class="section-head">
       <p class="eyebrow">SQL Portfolio</p>
       <h2 class="section-title">Querying, checked twice.</h2>
-      <p>Examples of SQL work as it's built out — from data analysis to reporting.</p>
+      <p>A normalized MySQL database built to compare pet product prices, delivery times, and availability across nine retailers — designed, populated, and queried from the ground up.</p>
     </div>
-    <div class="card-grid">
-      <div class="mini-card placeholder">
-        <p class="num">QUERY_01</p>
-        <h4>Customer Sales Analysis</h4>
-        <p>Add a walkthrough of a sales analysis query set here — schema, joins, and key findings.</p>
+
+    <div class="project-grid">
+      <article class="project-card">
+        <div>
+          <div class="meta-row">
+            <span class="tag pass">Status: Complete</span>
+            <span class="tag live">Personal Project · July 2026</span>
+          </div>
+          <h3>Shopping Tracker Database</h3>
+          <p>A relational database comparing pet product prices across nine retailers (Walmart, Petco, Chewy, Amazon, and more). Built three normalized tables linked by primary and foreign keys, populated them with real product and pricing data, then wrote queries ranging from basic filtering to window functions, CTEs, and views to answer questions like which store is cheapest for a given product and which retailers offer the fastest delivery.</p>
+          <ul class="stack">
+            <li>MySQL</li><li>Joins</li><li>Subqueries</li><li>CASE</li><li>Window Functions</li><li>CTEs</li><li>Views</li>
+          </ul>
+          <div class="links">
+            <a href="projects/shopping-tracker-database.html">Case study →</a>
+            <a href="https://github.com/katiegarcia89/pet-shopping-tracker-database" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://gitlab.com/katiegarcia/pet-shopping-tracker-database" target="_blank" rel="noopener">GitLab ↗</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="card-grid" style="margin-top:32px;">
+      <div class="mini-card">
+        <p class="num">BASIC</p>
+        <h4>Basic Queries</h4>
+        <p>SELECT, WHERE, ORDER BY, and LIMIT — filtering products by category and food type, searching by keyword, and sorting results.</p>
       </div>
-      <div class="mini-card placeholder">
-        <p class="num">QUERY_02</p>
-        <h4>Inventory Queries</h4>
-        <p>Add inventory-tracking queries here — stock levels, reorder logic, discrepancy checks.</p>
+      <div class="mini-card">
+        <p class="num">INTERMEDIATE</p>
+        <h4>Intermediate Queries</h4>
+        <p>INNER JOIN across all three tables plus COUNT, AVG, MIN, MAX, GROUP BY, and HAVING — average price per store, product counts by category, and stores with the fastest average delivery.</p>
       </div>
-      <div class="mini-card placeholder">
-        <p class="num">QUERY_03</p>
-        <h4>Reporting Dashboard</h4>
-        <p>Add a reporting query/dashboard example here — the SQL behind a summary view.</p>
+      <div class="mini-card">
+        <p class="num">ADVANCED</p>
+        <h4>Advanced Queries</h4>
+        <p>Subqueries, CASE statements, a ROW_NUMBER() CTE to find the cheapest store per product, RANK() to rank stores by average price, and a reusable ProductPriceComparison view.</p>
       </div>
     </div>
   </div>

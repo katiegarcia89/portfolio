@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Tracker Database — Katie Garcia</title>
+<meta name="description" content="Case study: a normalized MySQL database comparing pet product prices across nine retailers, built by Katie Garcia.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <div class="brand">Katie Garcia<small>QA Analyst · Web Developer</small></div>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#sql">SQL</a>
+      <a href="../index.html#excel">Excel/BI</a>
+      <a href="../index.html#qa">QA</a>
+      <a href="../index.html#certifications">Certifications</a>
+      <a href="../index.html#resume">Resume</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">SQL · MySQL · Database Design</p>
+    <h1>Shopping Tracker Database</h1>
+    <p class="lede">A normalized relational database built to compare pet product prices, delivery estimates, and availability across nine retailers.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://github.com/katiegarcia89/pet-shopping-tracker-database" target="_blank" rel="noopener">View on GitHub ↗</a>
+      <a class="btn btn-outline" href="https://gitlab.com/katiegarcia/pet-shopping-tracker-database" target="_blank" rel="noopener">View on GitLab ↗</a>
+      <a class="btn btn-outline" href="../index.html#sql">← Back to SQL Portfolio</a>
+    </div>
+    <div class="build-line">
+      <span>type: personal project</span>
+      <span>·</span>
+      <span>tool: MySQL Workbench</span>
+      <span>·</span>
+      <span>completed: July 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow">The Problem</p>
+      <h2 class="section-title">Comparing pet product prices was tedious and manual.</h2>
+      <p>I regularly shop for pet products across multiple retailers — Walmart, Petco, Chewy, Amazon, and others — and price, delivery time, and availability all vary between them. Keeping track of the best option for each product by hand didn't scale, and it also seemed like a strong opportunity to build something real with SQL rather than working from a generic tutorial dataset.</p>
+      <p>I wanted a project that would do two things at once: actually help me make more informed purchasing decisions, and demonstrate practical database design and query-writing skills to employers.</p>
+    </div>
+    <div class="fact-card">
+      <h3>At a glance</h3>
+      <ul class="fact-list">
+        <li>3 normalized tables</li>
+        <li>9 retailers tracked</li>
+        <li>19 products, 100+ price records</li>
+        <li>Primary &amp; foreign key relationships</li>
+        <li>Queries from basic filtering to window functions</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WAS SOLVED -->
+<section style="background:var(--paper-dim);">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How It Was Solved</p>
+      <h2 class="section-title">Database design, then queries — basic to advanced.</h2>
+      <p>I designed a normalized schema in MySQL Workbench, populated it with realistic product and pricing data, and then wrote a progression of queries to answer real purchasing questions.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="mini-card">
+        <p class="num">01</p>
+        <h4>Stores</h4>
+        <p>Holds each retailer's name and website — the source of the pricing being compared.</p>
+      </div>
+      <div class="mini-card">
+        <p class="num">02</p>
+        <h4>Products</h4>
+        <p>Product name, brand, manufacturer, category, and food type (wet/dry), independent of any one store.</p>
+      </div>
+      <div class="mini-card">
+        <p class="num">03</p>
+        <h4>StorePrices</h4>
+        <p>The linking table — price, date checked, and estimated delivery days for each product at each store, tied together with foreign keys back to Stores and Products.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUERY EXAMPLES -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Query Examples</p>
+      <h2 class="section-title">From filtering to window functions.</h2>
+    </div>
+
+    <div class="about-grid">
+      <div>
+        <h3>Basic</h3>
+        <p>Filtering, sorting, and searching — the everyday shape of "what do I have and how do I find it."</p>
+        <pre class="code-block"><code>SELECT *
+FROM Products
+WHERE category = 'Cat Food'
+AND food_type = 'Wet';</code></pre>
+      </div>
+      <div>
+        <h3>Intermediate</h3>
+        <p>Joining all three tables together, then aggregating to see patterns across stores.</p>
+        <pre class="code-block"><code>SELECT
+    s.store_name,
+    ROUND(AVG(sp.estimated_delivery_days), 1) AS average_delivery_days
+FROM StorePrices sp
+JOIN Stores s
+    ON sp.store_id = s.store_id
+GROUP BY s.store_name
+HAVING AVG(sp.estimated_delivery_days) &lt;= 2;</code></pre>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;">
+      <h3>Advanced</h3>
+      <p>A CTE with <code>ROW_NUMBER()</code> to find the single cheapest store for every product in one pass:</p>
+      <pre class="code-block"><code>WITH RankedPrices AS (
+    SELECT
+        p.product_name,
+        s.store_name,
+        sp.price,
+        ROW_NUMBER() OVER (
+            PARTITION BY p.product_id
+            ORDER BY sp.price
+        ) AS price_rank
+    FROM StorePrices sp
+    JOIN Products p ON sp.product_id = p.product_id
+    JOIN Stores s ON sp.store_id = s.store_id
+)
+SELECT product_name, store_name, price
+FROM RankedPrices
+WHERE price_rank = 1
+ORDER BY product_name;</code></pre>
+      <div class="shot-frame">
+        <img src="assets/cheapest-store-per-product.png" alt="MySQL Workbench showing the RankedPrices CTE query and its result grid, listing the cheapest store for each product." loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE QUESTIONS -->
+<section style="background:var(--paper-dim);">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Sample Questions Answered</p>
+      <h2 class="section-title">What the database can actually tell you.</h2>
+    </div>
+    <div class="card-grid">
+      <div class="mini-card">
+        <h4>Which store has the lowest price for a product?</h4>
+      </div>
+      <div class="mini-card">
+        <h4>Which products are available for same-day pickup?</h4>
+      </div>
+      <div class="mini-card">
+        <h4>What is the average price of dog food?</h4>
+      </div>
+      <div class="mini-card">
+        <h4>Which stores offer the fastest delivery?</h4>
+      </div>
+      <div class="mini-card">
+        <h4>What is the cheapest retailer for each product?</h4>
+      </div>
+      <div class="mini-card">
+        <h4>Which products are priced above or below average?</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT FILES -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Project Files</p>
+      <h2 class="section-title">What's in the repo.</h2>
+    </div>
+    <div class="resume-box">
+      <table style="width:100%; border-collapse:collapse;">
+        <thead>
+          <tr style="text-align:left; border-bottom:1px solid var(--ink-soft);">
+            <th style="padding:8px 12px 8px 0;">File</th>
+            <th style="padding:8px 0;">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:6px 12px 6px 0;">Create_Database.sql</td><td style="padding:6px 0;">Creates the database</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">Create_Tables.sql</td><td style="padding:6px 0;">Creates the Stores, Products, and StorePrices tables</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">Insert_Stores.sql</td><td style="padding:6px 0;">Inserts retailer data</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">Insert_Products.sql</td><td style="padding:6px 0;">Inserts product data</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">Insert_StorePrices.sql</td><td style="padding:6px 0;">Inserts pricing and delivery data</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">Basic_Queries.sql</td><td style="padding:6px 0;">SELECT, WHERE, ORDER BY, LIMIT</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">Intermediate_Queries.sql</td><td style="padding:6px 0;">Joins, aggregates, GROUP BY, HAVING</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">Advanced_Queries.sql</td><td style="padding:6px 0;">Subqueries, CASE, CTEs, window functions, views</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WAS LEARNED -->
+<section style="background:var(--paper-dim);">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What I Learned</p>
+      <h2 class="section-title">Beyond just writing SQL.</h2>
+      <p>Designing the schema first forced me to think about normalization before a single row of data went in — deciding what belonged in Products versus StorePrices, and why pricing needed its own linking table rather than living on the product itself. Writing the query set in stages, from basic filtering up through window functions and CTEs, also made it clear how much easier complex reporting becomes once the underlying joins and relationships are solid. It's the same instinct I bring to QA work: get the structure right before you start testing against it.</p>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://github.com/katiegarcia89/pet-shopping-tracker-database" target="_blank" rel="noopener">View full code on GitHub ↗</a>
+      <a class="btn btn-outline" href="https://gitlab.com/katiegarcia/pet-shopping-tracker-database" target="_blank" rel="noopener">View full code on GitLab ↗</a>
+      <a class="btn btn-outline" href="../index.html#sql">← Back to SQL Portfolio</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:10px;">
+    <span>© 2026 Katie Garcia</span>
+    <span>Kansas City, MO</span>
+  </div>
+</footer>
+
+</body>
+</html>
