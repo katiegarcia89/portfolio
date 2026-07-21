@@ -37,7 +37,7 @@ My portfolio highlights projects involving:
 
 ## Live Website
 
-(Add your Netlify or custom domain here)
+katie.garcia.dev
 
 ## Repository Structure
 
