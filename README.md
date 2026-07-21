@@ -37,7 +37,7 @@ My portfolio highlights projects involving:
 
 ## Live Website
 
-katie.garcia.dev
+katiegarcia.dev
 
 ## Repository Structure
 
