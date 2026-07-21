@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+
+# macOS text clipping files
+*.textClipping
