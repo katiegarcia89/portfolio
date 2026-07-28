@@ -67,3 +67,10 @@ https://www.linkedin.com/in/katiegarcia89/
 
 GitHub:
 https://github.com/katiegarcia89
+
+GitLab:
+https://github.com/katiegarcia
+
+Email:
+katie.garcia.c@gmail.com
+
