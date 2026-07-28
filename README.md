@@ -69,7 +69,7 @@ GitHub:
 https://github.com/katiegarcia89
 
 GitLab:
-https://github.com/katiegarcia
+https://gitlab.com/katiegarcia
 
 Email:
 katie.garcia.c@gmail.com
