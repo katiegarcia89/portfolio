@@ -6,6 +6,254 @@
 <title>Indian Creek Cycles · QA Testing · Katie Garcia</title>
 <meta name="description" content="Case study: manual QA testing, bug reports, and regression tracking for the Indian Creek Cycle Rentals admin features, by Katie Garcia.">
 <link rel="stylesheet" href="../style.css">
+
+<style>
+/* Responsive refinements matching the SQL Shopping Tracker page */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.wrap,
+.about-grid > *,
+.card-grid > * {
+  min-width: 0;
+}
+
+.shot-frame,
+.shot-frame.small {
+  width: 100%;
+}
+
+.shot-frame img {
+  width: 100%;
+  height: auto;
+}
+
+.code-block {
+  width: 100%;
+  max-width: 100%;
+}
+
+.project-files-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.project-files-table th,
+.project-files-table td {
+  padding: 8px 12px 8px 0;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.project-files-table th:first-child,
+.project-files-table td:first-child {
+  width: 42%;
+}
+
+.project-files-table thead tr {
+  border-bottom: 1px solid var(--ink-soft);
+}
+
+.project-files-table td:first-child {
+  font-family: var(--mono);
+}
+
+@media (max-width: 860px) {
+  .site-nav .wrap {
+    align-items: flex-start;
+  }
+
+  .back-link {
+    flex-basis: 100%;
+    margin-top: 4px;
+  }
+
+  .hero {
+    padding-top: 56px;
+    padding-bottom: 64px;
+  }
+
+  .hero h1 {
+    max-width: none;
+  }
+
+  .build-line {
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 15px;
+  }
+
+  .site-nav {
+    position: relative;
+  }
+
+  .site-nav .wrap {
+    align-items: flex-start;
+    padding-top: 14px;
+    padding-bottom: 12px;
+  }
+
+  /*.nav-links {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    justify-content: start;
+    column-gap: 4px;
+    row-gap: 4px;
+  }
+
+  .nav-links a {
+    padding: 7px;
+    font-size: 11.5px;
+    white-space: nowrap;
+  }*/
+
+  .back-link {
+    width: 100%;
+    margin-top: 6px;
+  }
+
+  .hero {
+    padding-top: 42px;
+    padding-bottom: 52px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 11vw, 48px);
+    overflow-wrap: anywhere;
+  }
+
+  .hero p.lede {
+    font-size: 17px;
+  }
+
+  .btn-row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .btn-row .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .build-line {
+    display: grid;
+    gap: 5px;
+  }
+
+  .build-line span:nth-child(even) {
+    display: none;
+  }
+
+  .section-head {
+    margin-bottom: 34px;
+  }
+
+  .shot-frame,
+  .shot-frame.small {
+    margin: 26px 0;
+  }
+
+  .code-block {
+    padding: 16px;
+    font-size: 12px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    overflow-x: hidden;
+  }
+
+  .code-block code {
+    white-space: inherit;
+  }
+
+  .resume-box {
+    padding: 16px 18px;
+  }
+
+  .project-files-table,
+  .project-files-table tbody,
+  .project-files-table tr,
+  .project-files-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .project-files-table thead {
+    display: none;
+  }
+
+  .project-files-table tr {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .project-files-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  .project-files-table td {
+    padding: 0;
+  }
+
+  .project-files-table td:first-child {
+    width: 100%;
+    margin-bottom: 4px;
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .project-files-table td:last-child {
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  footer .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 420px) {
+  .wrap {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .nav-links {
+    grid-template-columns: repeat(3, max-content);
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .fact-card,
+  .mini-card {
+    padding: 20px;
+  }
+
+  .code-block {
+    padding: 14px;
+    font-size: 11.5px;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -227,24 +475,24 @@
       <h2 class="section-title">What's in the repo.</h2>
     </div>
     <div class="resume-box">
-      <table style="width:100%; border-collapse:collapse;">
+      <table class="project-files-table">
         <thead>
-          <tr style="text-align:left; border-bottom:1px solid var(--ink-soft);">
-            <th style="padding:8px 12px 8px 0;">File</th>
-            <th style="padding:8px 0;">Description</th>
+          <tr>
+            <th>File</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td style="padding:6px 12px 6px 0;">README.md</td><td style="padding:6px 0;">Project overview, scope, and testing types</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">test-plan/test-plan.md</td><td style="padding:6px 0;">Scope, approach, environment, and success criteria</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">test-cases/Manual-Test-Cases.xlsx</td><td style="padding:6px 0;">19 structured manual test cases</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">bug-reports/BUG-001 through BUG-006</td><td style="padding:6px 0;">Individual defect reports with repro steps and severity</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">bug-reports/Bug-Log.xlsx</td><td style="padding:6px 0;">Defect tracker: status, severity, and fix verification</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">bug-fixes/Developer-Fix-Summary.md</td><td style="padding:6px 0;">What changed for each fix, and where</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">bug-fixes/Bug-Fix-Code-Comparison.md</td><td style="padding:6px 0;">Before/after code diffs for all six fixes</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">evidence/</td><td style="padding:6px 0;">Screenshots and a screen recording supporting each bug and test case</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">exploratory-testing/Session-01.md</td><td style="padding:6px 0;">Exploratory session charter and findings</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">regression-testing/RegressionTestingResults.md</td><td style="padding:6px 0;">Regression Cycle 1 results: 21/21 passing, all defects closed</td></tr>
+          <tr><td>README.md</td><td>Project overview, scope, and testing types</td></tr>
+          <tr><td>test-plan/test-plan.md</td><td>Scope, approach, environment, and success criteria</td></tr>
+          <tr><td>test-cases/Manual-Test-Cases.xlsx</td><td>19 structured manual test cases</td></tr>
+          <tr><td>bug-reports/BUG-001 through BUG-006</td><td>Individual defect reports with repro steps and severity</td></tr>
+          <tr><td>bug-reports/Bug-Log.xlsx</td><td>Defect tracker: status, severity, and fix verification</td></tr>
+          <tr><td>bug-fixes/Developer-Fix-Summary.md</td><td>What changed for each fix, and where</td></tr>
+          <tr><td>bug-fixes/Bug-Fix-Code-Comparison.md</td><td>Before/after code diffs for all six fixes</td></tr>
+          <tr><td>evidence/</td><td>Screenshots and a screen recording supporting each bug and test case</td></tr>
+          <tr><td>exploratory-testing/Session-01.md</td><td>Exploratory session charter and findings</td></tr>
+          <tr><td>regression-testing/RegressionTestingResults.md</td><td>Regression Cycle 1 results: 21/21 passing, all defects closed</td></tr>
         </tbody>
       </table>
       <div class="btn-row" style="margin-top:24px;">
