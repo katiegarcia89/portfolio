@@ -3,17 +3,252 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shopping Tracker Database — Katie Garcia</title>
+<title>Shopping Tracker Database · Katie Garcia</title>
 <meta name="description" content="Case study: a normalized MySQL database comparing pet product prices across nine retailers, built by Katie Garcia.">
 <link rel="stylesheet" href="../style.css">
+
+<style>
+/* Responsive refinements for the SQL Shopping Tracker detail page */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.wrap,
+.about-grid > *,
+.card-grid > * {
+  min-width: 0;
+}
+
+.shot-frame,
+.shot-frame.small {
+  width: 100%;
+}
+
+.shot-frame img {
+  width: 100%;
+  height: auto;
+}
+
+.code-block {
+  width: 100%;
+  max-width: 100%;
+}
+
+.project-files-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.project-files-table th,
+.project-files-table td {
+  padding: 8px 12px 8px 0;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.project-files-table th:first-child,
+.project-files-table td:first-child {
+  width: 42%;
+}
+
+.project-files-table thead tr {
+  border-bottom: 1px solid var(--ink-soft);
+}
+
+.project-files-table td:first-child {
+  font-family: var(--mono);
+}
+
+@media (max-width: 860px) {
+  .hero {
+    padding-top: 56px;
+    padding-bottom: 64px;
+  }
+
+  .hero h1 {
+    max-width: none;
+  }
+
+  .build-line {
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 15px;
+  }
+
+  .site-nav {
+    position: relative;
+  }
+
+  .site-nav .wrap {
+    align-items: flex-start;
+    padding-top: 14px;
+    padding-bottom: 12px;
+  }
+
+  /*.nav-links {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    justify-content: start;
+    column-gap: 4px;
+    row-gap: 4px;
+  }
+
+  .nav-links a {
+    padding: 7px;
+    font-size: 11.5px;
+    white-space: nowrap;
+  }*/
+
+  .hero {
+    padding-top: 42px;
+    padding-bottom: 52px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 11vw, 48px);
+    overflow-wrap: anywhere;
+  }
+
+  .hero p.lede {
+    font-size: 17px;
+  }
+
+  .btn-row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .btn-row .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .build-line {
+    display: grid;
+    gap: 5px;
+  }
+
+  .build-line span:nth-child(even) {
+    display: none;
+  }
+
+  .section-head {
+    margin-bottom: 34px;
+  }
+
+  .shot-frame,
+  .shot-frame.small {
+    margin: 26px 0;
+  }
+
+  .code-block {
+    padding: 16px;
+    font-size: 12px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    overflow-x: hidden;
+  }
+
+  .code-block code {
+    white-space: inherit;
+  }
+
+  .resume-box {
+    padding: 16px 18px;
+  }
+
+  .project-files-table,
+  .project-files-table tbody,
+  .project-files-table tr,
+  .project-files-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .project-files-table thead {
+    display: none;
+  }
+
+  .project-files-table tr {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .project-files-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  .project-files-table td {
+    padding: 0;
+  }
+
+  .project-files-table td:first-child {
+    width: 100%;
+    margin-bottom: 4px;
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .project-files-table td:last-child {
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  footer .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 420px) {
+  .wrap {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .nav-links {
+    grid-template-columns: repeat(3, max-content);
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .fact-card,
+  .mini-card {
+    padding: 20px;
+  }
+
+  .code-block {
+    padding: 14px;
+    font-size: 11.5px;
+  }
+}
+</style>
+
 </head>
 <body>
 
 <nav class="site-nav">
   <div class="wrap">
-    <div class="brand">Katie Garcia<small>QA Analyst · Web Developer</small></div>
-    <div class="nav-links">
+    <div class="brand"><a href="../index.html">Katie Garcia</a><small>QA Analyst · Web Developer</small></div>
+     <div class="nav-links">
       <a href="../index.html#about">About</a>
+      <a href="../index.html#strengths">Strengths</a>
       <a href="../index.html#projects">Projects</a>
       <a href="../index.html#sql">SQL</a>
       <a href="../index.html#excel">Excel/BI</a>
@@ -22,6 +257,17 @@
       <a href="../index.html#resume">Resume</a>
       <a href="../index.html#contact">Contact</a>
     </div>
+    <!--<div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#sql">SQL</a>
+      <a href="../index.html#excel">Excel/BI</a>
+      <a href="../index.html#qa">QA</a>
+      <a href="../index.html#certifications">Certifications</a>
+      <a href="../index.html#resume">Resume</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>-->
+    <a href="../index.html#sql" class="back-link">← SQL</a>
   </div>
 </nav>
 
@@ -51,7 +297,7 @@
     <div>
       <p class="eyebrow">The Problem</p>
       <h2 class="section-title">Comparing pet product prices was tedious and manual.</h2>
-      <p>I regularly shop for pet products across multiple retailers — Walmart, Petco, Chewy, Amazon, and others — and price, delivery time, and availability all vary between them. Keeping track of the best option for each product by hand didn't scale, and it also seemed like a strong opportunity to build something real with SQL rather than working from a generic tutorial dataset.</p>
+      <p>I regularly shop for pet products across multiple retailers, including Walmart, Petco, Chewy, and Amazon, and price, delivery time, and availability all vary between them. Keeping track of the best option for each product by hand didn't scale, and it also seemed like a strong opportunity to build something real with SQL rather than working from a generic tutorial dataset.</p>
       <p>I wanted a project that would do two things at once: actually help me make more informed purchasing decisions, and demonstrate practical database design and query-writing skills to employers.</p>
     </div>
     <div class="fact-card">
@@ -72,7 +318,7 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">How It Was Solved</p>
-      <h2 class="section-title">Database design, then queries — basic to advanced.</h2>
+      <h2 class="section-title">Database design, then queries: basic to advanced.</h2>
       <p>I designed a normalized schema in MySQL Workbench, populated it with realistic product and pricing data, and then wrote a progression of queries to answer real purchasing questions.</p>
     </div>
 
@@ -84,7 +330,7 @@
       <div class="mini-card">
         <p class="num">01</p>
         <h4>Stores</h4>
-        <p>Holds each retailer's name and website — the source of the pricing being compared.</p>
+        <p>Holds each retailer's name and website: the source of the pricing being compared.</p>
       </div>
       <div class="mini-card">
         <p class="num">02</p>
@@ -94,7 +340,7 @@
       <div class="mini-card">
         <p class="num">03</p>
         <h4>StorePrices</h4>
-        <p>The linking table — price, date checked, and estimated delivery days for each product at each store, tied together with foreign keys back to Stores and Products.</p>
+        <p>The linking table: price, date checked, and estimated delivery days for each product at each store, tied together with foreign keys back to Stores and Products.</p>
       </div>
     </div>
   </div>
@@ -111,7 +357,7 @@
     <div class="about-grid">
       <div>
         <h3>Basic</h3>
-        <p>Filtering, sorting, and searching — the everyday shape of "what do I have and how do I find it."</p>
+        <p>Filtering, sorting, and searching: the everyday shape of "what do I have and how do I find it."</p>
         <pre class="code-block"><code>SELECT *
 FROM Products
 WHERE category = 'Cat Food'
@@ -155,6 +401,24 @@ ORDER BY product_name;</code></pre>
         <img src="assets/cheapest-store-per-product.png" alt="MySQL Workbench showing the RankedPrices CTE query and its result grid, listing the cheapest store for each product." loading="lazy">
       </div>
     </div>
+
+    <div style="margin-top:32px;">
+      <h3>CRUD Operations</h3>
+      <p>Create and Read are covered above through inserts, joins, and views. This rounds those out with Update and Delete, wrapped in a transaction so changes can be reviewed before they're made permanent:</p>
+      <pre class="code-block"><code>UPDATE StorePrices
+SET price = 1.09,
+    date_checked = CURDATE()
+WHERE store_id = (SELECT store_id FROM Stores WHERE store_name = 'Petco')
+  AND product_id = (
+      SELECT product_id FROM Products
+      WHERE product_name LIKE 'Pumpkin Patch Up!%'
+  );
+
+START TRANSACTION;
+DELETE FROM StorePrices
+WHERE date_checked &lt; '2026-01-01';
+COMMIT;</code></pre>
+    </div>
   </div>
 </section>
 
@@ -196,22 +460,23 @@ ORDER BY product_name;</code></pre>
       <h2 class="section-title">What's in the repo.</h2>
     </div>
     <div class="resume-box">
-      <table style="width:100%; border-collapse:collapse;">
+      <table class="project-files-table">
         <thead>
-          <tr style="text-align:left; border-bottom:1px solid var(--ink-soft);">
-            <th style="padding:8px 12px 8px 0;">File</th>
-            <th style="padding:8px 0;">Description</th>
+          <tr>
+            <th>File</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td style="padding:6px 12px 6px 0;">Create_Database.sql</td><td style="padding:6px 0;">Creates the database</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">Create_Tables.sql</td><td style="padding:6px 0;">Creates the Stores, Products, and StorePrices tables</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">Insert_Stores.sql</td><td style="padding:6px 0;">Inserts retailer data</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">Insert_Products.sql</td><td style="padding:6px 0;">Inserts product data</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">Insert_StorePrices.sql</td><td style="padding:6px 0;">Inserts pricing and delivery data</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">Basic_Queries.sql</td><td style="padding:6px 0;">SELECT, WHERE, ORDER BY, LIMIT</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">Intermediate_Queries.sql</td><td style="padding:6px 0;">Joins, aggregates, GROUP BY, HAVING</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">Advanced_Queries.sql</td><td style="padding:6px 0;">Subqueries, CASE, CTEs, window functions, views</td></tr>
+          <tr><td>Create_Database.sql</td><td>Creates the database</td></tr>
+          <tr><td>Create_Tables.sql</td><td>Creates the Stores, Products, and StorePrices tables</td></tr>
+          <tr><td>Insert_Stores.sql</td><td>Inserts retailer data</td></tr>
+          <tr><td>Insert_Products.sql</td><td>Inserts product data</td></tr>
+          <tr><td>Insert_StorePrices.sql</td><td>Inserts pricing and delivery data</td></tr>
+          <tr><td>Basic_Queries.sql</td><td>SELECT, WHERE, ORDER BY, LIMIT</td></tr>
+          <tr><td>Intermediate_Queries.sql</td><td>Joins, aggregates, GROUP BY, HAVING</td></tr>
+          <tr><td>Advanced_Queries.sql</td><td>Subqueries, CASE, CTEs, window functions, views</td></tr>
+          <tr><td>CRUD_Operations.sql</td><td>UPDATE, DELETE, and transactions (COMMIT/ROLLBACK)</td></tr>
         </tbody>
       </table>
     </div>
@@ -224,7 +489,7 @@ ORDER BY product_name;</code></pre>
     <div class="section-head">
       <p class="eyebrow">What I Learned</p>
       <h2 class="section-title">Beyond just writing SQL.</h2>
-      <p>Designing the schema first forced me to think about normalization before a single row of data went in — deciding what belonged in Products versus StorePrices, and why pricing needed its own linking table rather than living on the product itself. Writing the query set in stages, from basic filtering up through window functions and CTEs, also made it clear how much easier complex reporting becomes once the underlying joins and relationships are solid. It's the same instinct I bring to QA work: get the structure right before you start testing against it.</p>
+      <p>Designing the schema first forced me to think about normalization before a single row of data went in, deciding what belonged in Products versus StorePrices, and why pricing needed its own linking table rather than living on the product itself. Writing the query set in stages, from basic filtering up through window functions and CTEs, also made it clear how much easier complex reporting becomes once the underlying joins and relationships are solid. It's the same instinct I bring to QA work: get the structure right before you start testing against it.</p>
     </div>
     <div class="btn-row">
       <a class="btn btn-primary" href="https://github.com/katiegarcia89/pet-shopping-tracker-database" target="_blank" rel="noopener">View full code on GitHub ↗</a>

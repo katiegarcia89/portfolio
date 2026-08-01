@@ -60,6 +60,10 @@ img{ max-width:100%; display:block; }
 .wrap{ max-width:1080px; margin:0 auto; padding:0 28px; }
 section{ padding:96px 0; }
 @media (max-width:640px){ section{ padding:64px 0; } .wrap{ padding:0 20px; } }
+@media (max-width:640px){
+  .resume-box{ padding:24px; }
+  .resume-box table{ font-size:13.5px; }
+}
 
 /* ---------- eyebrow / mono labels (QA vocabulary) ---------- */
 .eyebrow{
@@ -133,10 +137,11 @@ section{ padding:96px 0; }
   border-radius:5px;
 }
 .nav-links a:hover{ color:var(--ink); background:var(--paper-dim); text-decoration:none; }
-.nav-toggle{ display:none; }
 
 @media (max-width:860px){
-  .nav-links{ display:none; }
+  .site-nav .wrap{ flex-wrap:wrap; row-gap:8px; }
+  .nav-links{ gap:2px 0; width:100%; }
+  .nav-links a{ padding:9px 8px; font-size:12px; }
 }
 
 /* ---------- buttons ---------- */

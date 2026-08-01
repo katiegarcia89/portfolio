@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pet Shopping Tracker — Power BI Dashboard — Katie Garcia</title>
+<title>Pet Shopping Tracker · Power BI Dashboard · Katie Garcia</title>
 <meta name="description" content="Case study: Power BI dashboards built on top of the Shopping Tracker Database, analyzing pet product pricing across retailers, by Katie Garcia.">
 <link rel="stylesheet" href="../style.css">
 </head>
@@ -11,9 +11,10 @@
 
 <nav class="site-nav">
   <div class="wrap">
-    <div class="brand">Katie Garcia<small>QA Analyst · Web Developer</small></div>
+    <div class="brand"><a href="../index.html">Katie Garcia</a><small>QA Analyst · Web Developer</small></div>
     <div class="nav-links">
       <a href="../index.html#about">About</a>
+      <a href="../index.html#strengths">Strengths</a>
       <a href="../index.html#projects">Projects</a>
       <a href="../index.html#sql">SQL</a>
       <a href="../index.html#excel">Excel/BI</a>
@@ -22,14 +23,15 @@
       <a href="../index.html#resume">Resume</a>
       <a href="../index.html#contact">Contact</a>
     </div>
+    <a href="../index.html#excel" class="back-link">← Excel/BI</a>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
     <p class="kicker">Power BI · Data Visualization · DAX</p>
-    <h1>Pet Shopping Tracker — Power BI Dashboard</h1>
-    <p class="lede">Seven Power BI reports built on top of the Shopping Tracker Database — turning the same pet product pricing data from the SQL project into visual, at-a-glance comparisons across brands, categories, products, and stores.</p>
+    <h1>Pet Shopping Tracker · Power BI Dashboard</h1>
+    <p class="lede">Seven Power BI reports built on top of the Shopping Tracker Database, turning the same pet product pricing data from the SQL project into visual, at-a-glance comparisons across brands, categories, products, and stores.</p>
     <div class="btn-row">
       <a class="btn btn-primary" href="https://github.com/katiegarcia89/pet-shopping-tracker-power-bi-dashboard" target="_blank" rel="noopener">View on GitHub ↗</a>
       <a class="btn btn-outline" href="https://gitlab.com/katiegarcia/pet-shopping-tracker-power-bi-dashboard" target="_blank" rel="noopener">View on GitLab ↗</a>
@@ -40,7 +42,7 @@
       <span>·</span>
       <span>tool: Power BI Desktop</span>
       <span>·</span>
-      <span>data source: Shopping Tracker Database</span>
+      <span>status: in progress · July 2026</span>
     </div>
   </div>
 </header>
@@ -51,8 +53,8 @@
     <div>
       <p class="eyebrow">The Problem</p>
       <h2 class="section-title">SQL answers the question. A dashboard makes the answer obvious.</h2>
-      <p>The <a href="shopping-tracker-database.html">Shopping Tracker Database</a> project could already answer questions like "which store is cheapest for this product" or "what's the average price by category" — but the answers lived in query result grids. Power BI turns that same data into visuals a non-technical stakeholder could scan in seconds: which brands run expensive, which stores consistently undercut the rest, and where a single product's price swings the most across retailers.</p>
-      <p>Each report connects directly to the same normalized tables — Products, Stores, and StorePrices — so the visuals stay backed by the same relational structure, not a flattened export.</p>
+      <p>The <a href="shopping-tracker-database.html">Shopping Tracker Database</a> project could already answer questions like "which store is cheapest for this product" or "what's the average price by category," but the answers lived in query result grids. Power BI turns that same data into visuals a non-technical stakeholder could scan in seconds: which brands run expensive, which stores consistently undercut the rest, and where a single product's price swings the most across retailers.</p>
+      <p>Each report connects directly to the same normalized tables (Products, Stores, and StorePrices), so the visuals stay backed by the same relational structure, not a flattened export.</p>
     </div>
     <div class="fact-card">
       <h3>At a glance</h3>
@@ -73,25 +75,25 @@
     <div class="section-head">
       <p class="eyebrow">The Reports</p>
       <h2 class="section-title">Seven angles on the same data.</h2>
-      <p>Each report isolates one question — pricing by brand, by category, by product, by store, and the cheapest store for every product — so each is easy to read on its own or drop into a larger presentation.</p>
+      <p>Each report isolates one question: pricing by brand, by category, by product, by store, and the cheapest store for every product, so each is easy to read on its own or drop into a larger presentation.</p>
     </div>
 
     <div style="margin-bottom:36px;">
       <h3 style="font-family:var(--display); font-size:19px; margin-bottom:10px;">Average Price by Brand</h3>
-      <p style="color:var(--ink-soft); font-size:15px; margin-bottom:14px;">Ranks all 13 brands by average price — PanaKare Plus and Hill's Science Diet run highest, Pumpkin Patch Up! and Glandex lowest.</p>
-      <div class="shot-frame"><img src="assets/pbi-avg-price-brand.png" alt="Power BI bar chart showing average price by brand, ranked from PanaKare Plus (highest) to Pumpkin Patch Up! (lowest)." loading="lazy"></div>
+      <p style="color:var(--ink-soft); font-size:15px; margin-bottom:14px;">Ranks all 13 brands by average price. PanaKare Plus and Hill's Science Diet run highest, Pumpkin Patch Up! and Glandex lowest.</p>
+      <div class="shot-frame"><img src="assets/pbi-avg-price-brand.jpeg" alt="Power BI bar chart showing average price by brand, ranked from PanaKare Plus (highest) to Pumpkin Patch Up! (lowest)." loading="lazy"></div>
     </div>
 
     <div style="margin-bottom:36px;">
       <h3 style="font-family:var(--display); font-size:19px; margin-bottom:10px;">Average Price by Category</h3>
       <p style="color:var(--ink-soft); font-size:15px; margin-bottom:14px;">Medicine has by far the highest average price of any category, well ahead of Dog Food, Cat Litter, Cat Food, and Supplements.</p>
-      <div class="shot-frame"><img src="assets/pbi-avg-price-category.png" alt="Power BI bar chart showing average price by category: Medicine, Dog Food, Cat Litter, Cat Food, Supplement." loading="lazy"></div>
+      <div class="shot-frame"><img src="assets/pbi-avg-price-category.jpeg" alt="Power BI bar chart showing average price by category: Medicine, Dog Food, Cat Litter, Cat Food, Supplement." loading="lazy"></div>
     </div>
 
     <div style="margin-bottom:36px;">
       <h3 style="font-family:var(--display); font-size:19px; margin-bottom:10px;">Average Price per Product</h3>
-      <p style="color:var(--ink-soft); font-size:15px; margin-bottom:14px;">All 19 products ranked by average price across every store that carries them — useful for spotting which individual items carry the most price risk.</p>
-      <div class="shot-frame"><img src="assets/pbi-avg-price-product.png" alt="Power BI bar chart showing average price per product across all 19 products." loading="lazy"></div>
+      <p style="color:var(--ink-soft); font-size:15px; margin-bottom:14px;">All 19 products ranked by average price across every store that carries them, useful for spotting which individual items carry the most price risk.</p>
+      <div class="shot-frame"><img src="assets/pbi-avg-price-product.jpg" alt="Power BI bar chart showing average price per product across all 19 products." loading="lazy"></div>
     </div>
 
     <div style="margin-bottom:36px;">
@@ -102,20 +104,20 @@
 
     <div style="margin-bottom:36px;">
       <h3 style="font-family:var(--display); font-size:19px; margin-bottom:10px;">Cheapest Store by Product</h3>
-      <p style="color:var(--ink-soft); font-size:15px; margin-bottom:14px;">A sortable matrix — the Power BI counterpart to the SQL project's <code>ROW_NUMBER()</code> CTE — showing the lowest recorded price and estimated delivery time for every product, store included.</p>
-      <div class="shot-frame"><img src="assets/pbi-cheapest-store-product.png" alt="Power BI table listing the cheapest store, lowest price, and estimated delivery days for every product." loading="lazy"></div>
+      <p style="color:var(--ink-soft); font-size:15px; margin-bottom:14px;">A sortable matrix, the Power BI counterpart to the SQL project's <code>ROW_NUMBER()</code> CTE, showing the lowest recorded price and estimated delivery time for every product, store included.</p>
+      <div class="shot-frame"><img src="assets/pbi-cheapest-store-product.jpeg" alt="Power BI table listing the cheapest store, lowest price, and estimated delivery days for every product." loading="lazy"></div>
     </div>
 
     <div style="margin-bottom:36px;">
       <h3 style="font-family:var(--display); font-size:19px; margin-bottom:10px;">Products by Category</h3>
       <p style="color:var(--ink-soft); font-size:15px; margin-bottom:14px;">Cat Food and Dog Food make up the bulk of the catalog (7 and 6 products), with Cat Litter and Medicine represented by a single product each.</p>
-      <div class="shot-frame"><img src="assets/pbi-products-category.png" alt="Power BI bar chart showing product count by category." loading="lazy"></div>
+      <div class="shot-frame"><img src="assets/pbi-products-category.jpeg" alt="Power BI bar chart showing product count by category." loading="lazy"></div>
     </div>
 
     <div>
       <h3 style="font-family:var(--display); font-size:19px; margin-bottom:10px;">Products per Store</h3>
       <p style="color:var(--ink-soft); font-size:15px; margin-bottom:14px;">Chewy and Ebay carry the widest selection of tracked products; Costco carries the narrowest, consistent with its warehouse-club, bulk-item model.</p>
-      <div class="shot-frame"><img src="assets/pbi-products-store.png" alt="Power BI bar chart showing product count carried by each store, from Chewy (highest) to Costco (lowest)." loading="lazy"></div>
+      <div class="shot-frame"><img src="assets/pbi-products-store.jpeg" alt="Power BI bar chart showing product count carried by each store, from Chewy (highest) to Costco (lowest)." loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -137,13 +139,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td style="padding:6px 12px 6px 0;">Average Price by Brand</td><td style="padding:6px 0;"><a href="assets/Average_Price_by_Brand.pbix" download>.pbix</a></td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">Average Price by Category</td><td style="padding:6px 0;"><a href="assets/Average_Price_by_Brand.pbix" download>.pbix</a></td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">Average Price per Product</td><td style="padding:6px 0;"><a href="assets/Average_Price_per_Product.pbix" download>.pbix</a></td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">Average Price per Store</td><td style="padding:6px 0;"><a href="assets/Average_Price_per_Store.pbix" download>.pbix</a></td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">Cheapest Store by Product</td><td style="padding:6px 0;"><a href="assets/Cheapest_Store_by_Product.pbix" download>.pbix</a></td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">Products by Category</td><td style="padding:6px 0;"><a href="assets/Products_by_Category.pbix" download>.pbix</a></td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">Products per Store</td><td style="padding:6px 0;"><a href="assets/Products_per_Store.pbix" download>.pbix</a></td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">Average Price by Brand</td><td style="padding:6px 0;"><a href="assets/pbi/Average_Price_by_Brand.pbix" download>.pbix</a></td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">Average Price by Category</td><td style="padding:6px 0;"><a href="assets/pbi/Average_Price_by_Category.pbix" download>.pbix</a></td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">Average Price per Product</td><td style="padding:6px 0;"><a href="assets/pbi/Average_Price_per_Product.pbix" download>.pbix</a></td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">Average Price per Store</td><td style="padding:6px 0;"><a href="assets/pbi/Average_Price_per_Store.pbix" download>.pbix</a></td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">Cheapest Store by Product</td><td style="padding:6px 0;"><a href="assets/pbi/Cheapest_Store_by_Product.pbix" download>.pbix</a></td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">Products by Category</td><td style="padding:6px 0;"><a href="assets/pbi/Products_by_Category.pbix" download>.pbix</a></td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">Products per Store</td><td style="padding:6px 0;"><a href="assets/pbi/Products_per_Store.pbix" download>.pbix</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -156,7 +158,7 @@
     <div class="section-head">
       <p class="eyebrow">What I Learned</p>
       <h2 class="section-title">The same data, doing double duty.</h2>
-      <p>Building this alongside the SQL project made the connection between the two skill sets concrete — a <code>GROUP BY</code> and <code>AVG()</code> in MySQL and a DAX measure in Power BI are answering the exact same question, just for different audiences. SQL is where I'd go to investigate or validate a number; Power BI is where that number becomes something a manager or teammate can scan without needing to read a query. Splitting each report into its own focused view, rather than cramming everything onto one crowded dashboard, also made each chart easier to trust at a glance — a pattern I'd carry into QA reporting too, where a clear, single-purpose defect summary beats a dense one every time.</p>
+      <p>Building this alongside the SQL project made the connection between the two skill sets concrete: a <code>GROUP BY</code> and <code>AVG()</code> in MySQL and a DAX measure in Power BI are answering the exact same question, just for different audiences. SQL is where I'd go to investigate or validate a number; Power BI is where that number becomes something a manager or teammate can scan without needing to read a query. Splitting each report into its own focused view, rather than cramming everything onto one crowded dashboard, also made each chart easier to trust at a glance, a pattern I'd carry into QA reporting too, where a clear, single-purpose defect summary beats a dense one every time.</p>
     </div>
     <div class="btn-row">
       <a class="btn btn-primary" href="https://github.com/katiegarcia89/pet-shopping-tracker-power-bi-dashboard" target="_blank" rel="noopener">View full repo on GitHub ↗</a>

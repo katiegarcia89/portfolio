@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Indian Creek Cycles — QA Testing — Katie Garcia</title>
+<title>Indian Creek Cycles · QA Testing · Katie Garcia</title>
 <meta name="description" content="Case study: manual QA testing, bug reports, and regression tracking for the Indian Creek Cycle Rentals admin features, by Katie Garcia.">
 <link rel="stylesheet" href="../style.css">
 </head>
@@ -11,9 +11,10 @@
 
 <nav class="site-nav">
   <div class="wrap">
-    <div class="brand">Katie Garcia<small>QA Analyst · Web Developer</small></div>
+    <div class="brand"><a href="../index.html">Katie Garcia</a><small>QA Analyst · Web Developer</small></div>
     <div class="nav-links">
       <a href="../index.html#about">About</a>
+      <a href="../index.html#strengths">Strengths</a>
       <a href="../index.html#projects">Projects</a>
       <a href="../index.html#sql">SQL</a>
       <a href="../index.html#excel">Excel/BI</a>
@@ -21,15 +22,17 @@
       <a href="../index.html#certifications">Certifications</a>
       <a href="../index.html#resume">Resume</a>
       <a href="../index.html#contact">Contact</a>
+      
     </div>
+    <a href="../index.html#qa" class="back-link">← QA</a>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
     <p class="kicker">QA · Manual Testing · Defect Documentation</p>
-    <h1>Indian Creek Cycles — QA Testing</h1>
-    <p class="lede">Revisiting the Indian Creek Cycle Rentals capstone from a tester's perspective — structured test cases, exploratory sessions, documented defects, and regression tracking on the admin features.</p>
+    <h1>Indian Creek Cycles · QA Testing</h1>
+    <p class="lede">Revisiting the Indian Creek Cycle Rentals capstone from a tester's perspective: structured test cases, exploratory sessions, documented defects, and regression tracking on the admin features.</p>
     <div class="btn-row">
       <a class="btn btn-primary" href="https://github.com/katiegarcia89/indian-creek-cycles-qa" target="_blank" rel="noopener">View on GitHub ↗</a>
       <a class="btn btn-outline" href="https://gitlab.com/katiegarcia/indian-creek-cycles-qa" target="_blank" rel="noopener">View on GitLab ↗</a>
@@ -38,9 +41,9 @@
     <div class="build-line">
       <span>type: personal project</span>
       <span>·</span>
-      <span>app under test: indiancreekcycles.com</span>
+      <span>app under test: www.indiancreekcycles.com</span>
       <span>·</span>
-      <span>status: in progress · July 2026</span>
+      <span>status: fixes verified · July 2026</span>
     </div>
   </div>
 </header>
@@ -51,16 +54,16 @@
     <div>
       <p class="eyebrow">The Problem</p>
       <h2 class="section-title">"It works" isn't the same as "it's been tested."</h2>
-      <p>Indian Creek Cycle Rentals was originally built as a team capstone project — the focus was shipping features. This project revisits the finished application from a tester's perspective: writing structured test cases, exploring the admin features the way a real user or administrator would, and documenting what actually breaks rather than what was assumed to work.</p>
-      <p>The scope now covers both the public-facing site and the custom admin functionality — homepage, navigation, bicycle listings and details, the reservation workflow, authentication, responsive design, accessibility, and error handling, alongside the dashboard, bike management, reservation management, accessories, reviews, and role-based permissions. That broader scope is what surfaced two accessibility defects that pure admin testing would have missed.</p>
+      <p>Indian Creek Cycle Rentals was originally built as a team capstone project, where the focus was shipping features. This project revisits the finished application from a tester's perspective: writing structured test cases, exploring the admin features the way a real user or administrator would, and documenting what actually breaks rather than what was assumed to work.</p>
+      <p>The scope now covers both the public-facing site and the custom admin functionality: homepage, navigation, bicycle listings and details, the reservation workflow, authentication, responsive design, accessibility, and error handling, alongside the dashboard, bike management, reservation management, accessories, reviews, and role-based permissions. That broader scope is what surfaced two accessibility defects that pure admin testing would have missed.</p>
     </div>
     <div class="fact-card">
       <h3>At a glance</h3>
       <ul class="fact-list">
-        <li>19 manual test cases · 17 passed, 2 failed</li>
-        <li>6 documented defects</li>
+        <li>19 manual test cases, 21 with regression retests</li>
+        <li>6 documented defects, all fixed &amp; verified</li>
         <li>1 exploratory testing session</li>
-        <li>1 regression cycle, tracked to source test cases</li>
+        <li>1 regression cycle, 21/21 passing, 0 new regressions</li>
         <li>Smoke, functional, negative, responsive, accessibility &amp; visual testing</li>
       </ul>
     </div>
@@ -73,18 +76,18 @@
     <div class="section-head">
       <p class="eyebrow">Approach</p>
       <h2 class="section-title">Plan, execute, document, retest.</h2>
-      <p>Manual functional, negative, responsive, accessibility, and visual testing, plus exploratory testing — across Google Chrome and Safari, on macOS and Windows 11, desktop and mobile — with regression testing staged and ready once fixes land.</p>
+      <p>Manual functional, negative, responsive, accessibility, and visual testing, plus exploratory testing, across Google Chrome and Safari, on macOS and Windows 11, desktop and mobile, with regression testing staged and ready once fixes land.</p>
     </div>
     <div class="card-grid">
       <div class="mini-card">
         <p class="num">01</p>
         <h4>Test Plan</h4>
-        <p>Defined scope, approach, environment, and success criteria before writing a single test case — so testing stayed focused on the admin features rather than re-testing the whole capstone app.</p>
+        <p>Defined scope, approach, environment, and success criteria before writing a single test case, so testing stayed focused on the admin features rather than re-testing the whole capstone app.</p>
       </div>
       <div class="mini-card">
         <p class="num">02</p>
         <h4>Test Cases</h4>
-        <p>19 structured manual test cases spanning smoke, functional, negative, responsive, accessibility, visual, and regression testing — 17 passed, 2 failed — each with steps, expected results, priority, and status.</p>
+        <p>19 structured manual test cases spanning smoke, functional, negative, responsive, accessibility, visual, and regression testing (17 passed, 2 failed), each with steps, expected results, priority, and status.</p>
       </div>
       <div class="mini-card">
         <p class="num">03</p>
@@ -100,38 +103,56 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Bug Reports</p>
-      <h2 class="section-title">Six defects, documented end to end.</h2>
-      <p>Each defect includes severity, steps to reproduce, expected vs. actual results, impact, and a suggested fix — the same structure a development team would need to triage and act on it.</p>
+      <h2 class="section-title">Six defects, documented, fixed, and verified.</h2>
+      <p>Each defect includes severity, steps to reproduce, expected vs. actual results, impact, and a suggested fix: the same structure a development team would need to triage and act on it. All six have since been fixed and passed regression testing.</p>
     </div>
 
     <div class="card-grid">
       <div class="mini-card">
-        <p class="num" style="color:var(--clay);">MEDIUM</p>
+        <div class="meta-row" style="margin-bottom:8px;">
+          <span class="num" style="color:var(--clay);">MEDIUM</span>
+          <span class="tag pass">Fixed &amp; Verified</span>
+        </div>
         <h4>BUG-001: Dashboard Overcounts Active Reservations</h4>
         <p>The dashboard reports 19 reservations as "active right now," but the count includes reservations whose end dates have already passed.</p>
       </div>
       <div class="mini-card">
-        <p class="num" style="color:var(--clay);">MEDIUM</p>
+        <div class="meta-row" style="margin-bottom:8px;">
+          <span class="num" style="color:var(--clay);">MEDIUM</span>
+          <span class="tag pass">Fixed &amp; Verified</span>
+        </div>
         <h4>BUG-002: Expired Pending Reservations Never Resolve</h4>
-        <p>Reservations stay in Pending status indefinitely after their period ends — there's no expiration policy to move them to a final status.</p>
+        <p>Reservations stay in Pending status indefinitely after their period ends. There's no expiration policy to move them to a final status.</p>
       </div>
       <div class="mini-card">
-        <p class="num" style="color:var(--amber-deep);">LOW</p>
+        <div class="meta-row" style="margin-bottom:8px;">
+          <span class="num" style="color:var(--amber-deep);">LOW</span>
+          <span class="tag pass">Fixed &amp; Verified</span>
+        </div>
         <h4>BUG-003: Ride Guide Omits the Cancellation Policy</h4>
         <p>Customers aren't told how long a reservation stays pending or when an unpaid reservation gets auto-cancelled.</p>
       </div>
       <div class="mini-card">
-        <p class="num" style="color:#B23A2E;">HIGH</p>
+        <div class="meta-row" style="margin-bottom:8px;">
+          <span class="num" style="color:#B23A2E;">HIGH</span>
+          <span class="tag pass">Fixed &amp; Verified</span>
+        </div>
         <h4>BUG-004: Dashboard Revenue Doesn't Match Its Own Breakdown</h4>
-        <p>The dashboard revenue card shows $782.00; the Revenue Breakdown page — on the same data — totals $863.00. The dashboard silently excludes rental add-on revenue.</p>
+        <p>The dashboard revenue card shows $782.00; the Revenue Breakdown page, on the same data, totals $863.00. The dashboard silently excludes rental add-on revenue.</p>
       </div>
       <div class="mini-card">
-        <p class="num" style="color:var(--clay);">MEDIUM</p>
+        <div class="meta-row" style="margin-bottom:8px;">
+          <span class="num" style="color:var(--clay);">MEDIUM</span>
+          <span class="tag pass">Fixed &amp; Verified</span>
+        </div>
         <h4>BUG-005: Browser Zoom Breaks Navigation</h4>
         <p>The site holds up through 150% browser zoom, but at 175% the nav bar disappears, the hamburger menu stops responding, and the logo no longer links home.</p>
       </div>
       <div class="mini-card">
-        <p class="num" style="color:var(--clay);">MEDIUM</p>
+        <div class="meta-row" style="margin-bottom:8px;">
+          <span class="num" style="color:var(--clay);">MEDIUM</span>
+          <span class="tag pass">Fixed &amp; Verified</span>
+        </div>
         <h4>BUG-006: Keyboard Navigation Requires Mouse Interaction</h4>
         <p>Tab/Shift+Tab/Enter work fine within a section, but moving from the header navigation into page content requires a mouse click before keyboard navigation resumes.</p>
       </div>
@@ -139,7 +160,7 @@
 
     <div style="margin-top:40px;">
       <h3 style="font-family:var(--display); font-size:20px; margin-bottom:14px;">BUG-004 in detail</h3>
-      <p style="color:var(--ink-soft); font-size:15px;">This was the highest-severity find: two pages reporting two different totals from the same underlying data, which is exactly the kind of bug that erodes trust in a dashboard. The Revenue Breakdown page correctly sums Bike Rentals ($737), Rental Add-Ons ($81), and Merchandise ($45) to $863 — but the dashboard's revenue card leaves rental add-ons out of its total entirely.</p>
+      <p style="color:var(--ink-soft); font-size:15px;">This was the highest-severity find: two pages reporting two different totals from the same underlying data, which is exactly the kind of bug that erodes trust in a dashboard. The Revenue Breakdown page correctly sums Bike Rentals ($737), Rental Add-Ons ($81), and Merchandise ($45) to $863, but the dashboard's revenue card leaves rental add-ons out of its total entirely.</p>
       <div class="shot-frame">
         <img src="assets/qa-bug004-dashboard.png" alt="Admin dashboard revenue summary card showing $782.00 total revenue, missing rental add-on revenue." loading="lazy">
       </div>
@@ -150,7 +171,7 @@
 
     <div style="margin-top:40px;">
       <h3 style="font-family:var(--display); font-size:20px; margin-bottom:14px;">BUG-005 in detail</h3>
-      <p style="color:var(--ink-soft); font-size:15px;">Found while testing accessibility at increased browser zoom — a real scenario for low-vision users. Navigation degrades gracefully up to 150% zoom, but crosses a breaking point at 175%: the nav bar disappears entirely, the hamburger menu stops opening, and clicking the logo no longer returns users to the homepage.</p>
+      <p style="color:var(--ink-soft); font-size:15px;">Found while testing accessibility at increased browser zoom, a real scenario for low-vision users. Navigation degrades gracefully up to 150% zoom, but crosses a breaking point at 175%: the nav bar disappears entirely, the hamburger menu stops opening, and clicking the logo no longer returns users to the homepage.</p>
       <div class="shot-frame">
         <img src="assets/qa-bug005-zoom.png" alt="Website navigation bar broken and missing at 175% browser zoom." loading="lazy">
       </div>
@@ -158,19 +179,42 @@
 
     <div style="margin-top:40px;">
       <h3 style="font-family:var(--display); font-size:20px; margin-bottom:14px;">BUG-006 in detail</h3>
-      <p style="color:var(--ink-soft); font-size:15px;">Documented as a screen recording rather than a screenshot, since the bug is about motion — where keyboard focus goes (or doesn't) as you tab from the header into the page.</p>
+      <p style="color:var(--ink-soft); font-size:15px;">Documented as a screen recording rather than a screenshot, since the bug is about motion: where keyboard focus goes (or doesn't) as you tab from the header into the page.</p>
       <p style="font-family:var(--mono); font-size:13px;"><a href="assets/qa-bug006-keyboard-nav.mov" target="_blank">▶ Watch the recording</a></p>
     </div>
   </div>
 </section>
 
-<!-- REGRESSION -->
+<!-- BUG FIXES -->
 <section style="background:var(--paper-dim);">
   <div class="wrap">
     <div class="section-head">
+      <p class="eyebrow">Bug Fixes</p>
+      <h2 class="section-title">From bug report to verified fix.</h2>
+      <p>Each defect was handed off with a suggested fix, then closed out with a real code change and a regression pass to confirm it. Here's the BUG-004 fix, the dashboard revenue mismatch, straight from the commit diff:</p>
+      <pre class="code-block"><code>+    rental_addon_revenue = Decimal("0.00")
++    # BUG-004: rental add-ons are revenue too, so include them in the dashboard total.
++    for item in ReservationAccessory.objects.filter(
++        fulfillment_type="rental",
++        reservation__status__in=["paid", "active", "completed"],
++    ):
++        rental_addon_revenue += item.get_total()</code></pre>
+      <p style="color:var(--ink-soft); font-size:15px; margin-top:14px;">One line explaining <em>why</em> the fix exists, right next to the code that makes it, is a small habit that makes a defect easy to verify later. All six fixes follow this same pattern.</p>
+      <div class="btn-row" style="margin-top:20px;">
+        <a class="btn btn-outline btn-sm" href="assets/qa-developer-fix-summary.md" target="_blank">Read the full fix summary</a>
+        <a class="btn btn-outline btn-sm" href="assets/qa-bug-fix-code-comparison.md" target="_blank">View the full code comparison</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGRESSION -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
       <p class="eyebrow">Regression Testing</p>
-      <h2 class="section-title">Tracking fixes back to the test cases that found them.</h2>
-      <p>Each defect is mapped to the test case that would confirm it's actually resolved — TC-002 for BUG-001, TC-007 for BUG-002, TC-010 for BUG-003, and TC-019 for BUG-004 — so regression testing isn't just "click around and see," it's a checklist tied to specific, repeatable steps. Regression Cycle 1 is staged and ready to execute once the reported defects are addressed; BUG-005 and BUG-006, found afterward during accessibility testing, will be added to the next regression pass.</p>
+      <h2 class="section-title">All six defects closed, no new regressions.</h2>
+      <p>Each defect was mapped to the test case that would confirm it was actually resolved: TC-002 for BUG-001, TC-007 for BUG-002, TC-010 for BUG-003, TC-019 for BUG-004, TC-020 for BUG-005, and TC-021 for BUG-006. Regression Cycle 1 has been completed: all 21 test cases pass, all six defects are closed and verified, and no new issues were introduced by the fixes.</p>
     </div>
   </div>
 </section>
@@ -193,15 +237,19 @@
         <tbody>
           <tr><td style="padding:6px 12px 6px 0;">README.md</td><td style="padding:6px 0;">Project overview, scope, and testing types</td></tr>
           <tr><td style="padding:6px 12px 6px 0;">test-plan/test-plan.md</td><td style="padding:6px 0;">Scope, approach, environment, and success criteria</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">test-cases/Manual_Test_Cases.xlsx</td><td style="padding:6px 0;">19 structured manual test cases (17 passed, 2 failed)</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">test-cases/Manual-Test-Cases.xlsx</td><td style="padding:6px 0;">19 structured manual test cases</td></tr>
           <tr><td style="padding:6px 12px 6px 0;">bug-reports/BUG-001 through BUG-006</td><td style="padding:6px 0;">Individual defect reports with repro steps and severity</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">bug-reports/Bug-Log.xlsx</td><td style="padding:6px 0;">Defect tracker: status, severity, and fix verification</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">bug-fixes/Developer-Fix-Summary.md</td><td style="padding:6px 0;">What changed for each fix, and where</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">bug-fixes/Bug-Fix-Code-Comparison.md</td><td style="padding:6px 0;">Before/after code diffs for all six fixes</td></tr>
           <tr><td style="padding:6px 12px 6px 0;">evidence/</td><td style="padding:6px 0;">Screenshots and a screen recording supporting each bug and test case</td></tr>
           <tr><td style="padding:6px 12px 6px 0;">exploratory-testing/Session-01.md</td><td style="padding:6px 0;">Exploratory session charter and findings</td></tr>
-          <tr><td style="padding:6px 12px 6px 0;">regression-testing/Regression_Testing_Results.md</td><td style="padding:6px 0;">Regression Cycle 1 tracking, mapped to test cases</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;">regression-testing/RegressionTestingResults.md</td><td style="padding:6px 0;">Regression Cycle 1 results: 21/21 passing, all defects closed</td></tr>
         </tbody>
       </table>
       <div class="btn-row" style="margin-top:24px;">
         <a class="btn btn-outline btn-sm" href="assets/Indian_Creek_Cycles_Manual_Test_Cases.xlsx" download>Download test cases (.xlsx)</a>
+        <a class="btn btn-outline btn-sm" href="assets/Indian_Creek_Cycles_Bug_Log.xlsx" download>Download bug log (.xlsx)</a>
       </div>
     </div>
   </div>
@@ -213,7 +261,7 @@
     <div class="section-head">
       <p class="eyebrow">What I Learned</p>
       <h2 class="section-title">Testing your own project is its own skill.</h2>
-      <p>Testing an application I'd already built required deliberately setting aside what I knew was "supposed" to happen and testing what actually does — the dashboard revenue mismatch is a good example of a bug that's easy to miss when you built the feature, but jumps out the moment you compare two numbers that are supposed to agree. Structuring the bug reports with severity, impact, and a suggested fix — rather than just "this is broken" — is the same discipline I want to bring into a QA role: making defects easy for a development team to prioritize and act on, not just easy to find. Expanding testing to the public-facing site also surfaced something functional testing alone wouldn't have: two accessibility defects, at higher browser zoom and with keyboard-only navigation, that only show up when you deliberately test outside the "default" way of using a site.</p>
+      <p>Testing an application I'd already built required deliberately setting aside what I knew was "supposed" to happen and testing what actually does. The dashboard revenue mismatch is a good example: a bug that's easy to miss when you built the feature, but jumps out the moment you compare two numbers that are supposed to agree. Structuring the bug reports with severity, impact, and a suggested fix, rather than just "this is broken," is the same discipline I want to bring into a QA role: making defects easy for a development team to prioritize and act on, not just easy to find. Expanding testing to the public-facing site also surfaced something functional testing alone wouldn't have: two accessibility defects, at higher browser zoom and with keyboard-only navigation, that only show up when you deliberately test outside the "default" way of using a site. Seeing all six through to a fixed, regression-tested, closed status was the part that made the process feel complete: a bug report only really matters once it's verified fixed, not just filed.</p>
     </div>
     <div class="btn-row">
       <a class="btn btn-primary" href="https://github.com/katiegarcia89/indian-creek-cycles-qa" target="_blank" rel="noopener">View full repo on GitHub ↗</a>
