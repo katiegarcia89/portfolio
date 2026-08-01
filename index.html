@@ -29,19 +29,29 @@
 <!-- HOME -->
 <header class="hero" id="home">
   <div class="wrap">
-    <p class="kicker">Kansas City, MO</p>
-    <h1>Hi, I'm Katie Garcia.<br><em>QA-minded</em>, web-built, detail-obsessed.</h1>
-    <p class="lede">I'm an aspiring QA Analyst and technology professional with experience building websites, working with SQL, Excel, and software projects. I enjoy solving problems and creating user-friendly applications.</p>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="#projects">View Projects</a>
-      <a class="btn btn-outline" href="assets/Katie_Garcia_Resume.pdf" download>Download Resume</a>
-    </div>
-    <div class="build-line">
-      <span>build: portfolio v1.0</span>
-      <span>·</span>
-      <span>deployed: Kansas City, MO</span>
-      <span>·</span>
-      <span>last tested: July 2026</span>
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">Kansas City, MO</p>
+        <h1>Hi, I'm Katie Garcia.<br><em>QA-minded</em>, web-built, detail-obsessed.</h1>
+        <p class="lede">I'm an aspiring QA Analyst and technology professional with experience building websites, working with SQL, Excel, and software projects. I enjoy solving problems and creating user-friendly applications.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-outline" href="assets/Katie_Garcia_Resume.pdf" download>Download Resume</a>
+        </div>
+        <div class="build-line">
+          <span>build: portfolio v1.0</span>
+          <span>·</span>
+          <span>deployed: Kansas City, MO</span>
+          <span>·</span>
+          <span>last tested: July 2026</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h3>Core Stack</h3>
+        <ul class="skill-chips">
+          <li>SQL</li><li>Python</li><li>QA Testing</li><li>Git</li><li>MySQL</li><li>JavaScript</li>
+        </ul>
+      </div>
     </div>
   </div>
 </header>
@@ -58,7 +68,7 @@
     <div class="fact-card">
       <h3>At a glance</h3>
       <ul class="fact-list">
-        <li>A.A.S., Computer Information Science — Johnson County Community College, 2026</li>
+        <li>A.A.S., Computer Information Science — Johnson County Community College, 2026 · GPA: 3.77</li>
         <li>Certificate, CIS: Software Developer — Johnson County Community College, 2026</li>
         <li>B.A. Music — Truman State University, 2013</li>
         <li>13+ years in quality-focused, fast-paced operations environments</li>
@@ -155,6 +165,8 @@
           <div class="links">
             <a href="projects/marc-garcia-trumpet.html">Case study →</a>
             <a href="https://marcgarciatrumpet.com" target="_blank" rel="noopener">Live site ↗</a>
+            <a href="https://gitlab.com/katiegarcia/client-business-website" target="_blank" rel="noopener">GitLab ↗</a>
+            <a href="https://github.com/katiegarcia89/client-business-website" target="_blank" rel="noopener">GitHub ↗</a>
           </div>
         </div>
       </article>
@@ -237,23 +249,45 @@
     <div class="section-head">
       <p class="eyebrow">Excel &amp; Power BI</p>
       <h2 class="section-title">Dashboards and data, made readable.</h2>
-      <p>Spreadsheet models and dashboards, added as they're built.</p>
+      <p>Seven Power BI reports built on the Shopping Tracker Database — the same pricing data from the SQL project, turned into visual comparisons a non-technical stakeholder can scan at a glance.</p>
     </div>
-    <div class="card-grid">
-      <div class="mini-card placeholder">
-        <p class="num">DASH_01</p>
-        <h4>Add a dashboard</h4>
-        <p>Drop in a screenshot and short description of an Excel or Power BI dashboard here.</p>
+
+    <div class="project-grid">
+      <article class="project-card">
+        <div>
+          <div class="meta-row">
+            <span class="tag live">In Progress</span>
+            <span class="tag live">Personal Project · July 2026</span>
+          </div>
+          <h3>Pet Shopping Tracker — Power BI Dashboard</h3>
+          <p>Connected Power BI directly to the Shopping Tracker Database schema and built seven focused reports — average price by brand, category, product, and store; product counts by category and by store; and a sortable cheapest-store-by-product matrix.</p>
+          <ul class="stack">
+            <li>Power BI Desktop</li><li>Power Query</li><li>DAX</li><li>Data Modeling</li><li>Data Visualization</li>
+          </ul>
+          <div class="links">
+            <a href="projects/pet-shopping-tracker-power-bi.html">Case study →</a>
+            <a href="https://github.com/katiegarcia89/pet-shopping-tracker-power-bi-dashboard" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://gitlab.com/katiegarcia/pet-shopping-tracker-power-bi-dashboard" target="_blank" rel="noopener">GitLab ↗</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="card-grid" style="margin-top:32px;">
+      <div class="mini-card">
+        <p class="num">PRICE</p>
+        <h4>Pricing Analysis</h4>
+        <p>Average price broken down by brand, category, and individual product — where the expensive brands and categories actually are.</p>
       </div>
-      <div class="mini-card placeholder">
-        <p class="num">DASH_02</p>
-        <h4>Add a dashboard</h4>
-        <p>Drop in a screenshot and short description of an Excel or Power BI dashboard here.</p>
+      <div class="mini-card">
+        <p class="num">STORE</p>
+        <h4>Store Comparison</h4>
+        <p>Average price per store and product counts per store — which retailers run cheap, and which carry the widest selection.</p>
       </div>
-      <div class="mini-card placeholder">
-        <p class="num">DASH_03</p>
-        <h4>Add a dashboard</h4>
-        <p>Drop in a screenshot and short description of an Excel or Power BI dashboard here.</p>
+      <div class="mini-card">
+        <p class="num">MATRIX</p>
+        <h4>Cheapest Store by Product</h4>
+        <p>A sortable table matching every product to its lowest recorded price, store, and estimated delivery time.</p>
       </div>
     </div>
   </div>
@@ -265,28 +299,49 @@
     <div class="section-head">
       <p class="eyebrow">QA Portfolio</p>
       <h2 class="section-title">The evidence behind "it works."</h2>
-      <p>Test cases, bug reports, and exploratory testing artifacts — to be filled in as this body of work grows.</p>
+      <p>Revisiting the Indian Creek Cycle Rentals capstone from a tester's perspective — structured test cases, exploratory sessions, documented defects, and regression tracking.</p>
     </div>
-    <div class="card-grid">
-      <div class="mini-card placeholder">
+
+    <div class="project-grid">
+      <article class="project-card">
+        <div>
+          <div class="meta-row">
+            <span class="tag live">In Progress · July 2026</span>
+          </div>
+          <h3>Indian Creek Cycles — QA Testing</h3>
+          <p>An independent QA pass on Indian Creek Cycle Rentals, covering both the public site and the admin features: 19 manual test cases (17 passed, 2 failed), plus exploratory testing that surfaced six defects — from a revenue total on the admin dashboard that didn't match its own breakdown page, to navigation that breaks at high browser zoom.</p>
+          <ul class="stack">
+            <li>Manual Testing</li><li>Test Cases</li><li>Bug Reports</li><li>Exploratory Testing</li><li>Regression Testing</li>
+          </ul>
+          <div class="links">
+            <a href="projects/indian-creek-cycles-qa.html">Case study →</a>
+            <a href="https://github.com/katiegarcia89/indian-creek-cycles-qa" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://gitlab.com/katiegarcia/indian-creek-cycles-qa" target="_blank" rel="noopener">GitLab ↗</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="card-grid" style="margin-top:32px;">
+      <div class="mini-card">
+        <p class="num">PLAN</p>
+        <h4>Test Plan</h4>
+        <p>Scope, testing approach, environments, and success criteria for the admin dashboard, bike/reservation management, accessories, reviews, and role-based permissions.</p>
+      </div>
+      <div class="mini-card">
         <p class="num">TC</p>
         <h4>Test Cases</h4>
-        <p>Add a sample test case document or link here.</p>
+        <p>19 manual test cases spanning smoke, functional, negative, responsive, accessibility, visual, and regression testing — 17 passed, 2 failed — tracked in a structured spreadsheet.</p>
       </div>
-      <div class="mini-card placeholder">
+      <div class="mini-card">
         <p class="num">BUG</p>
         <h4>Bug Reports</h4>
-        <p>Add a sample defect report here — steps to reproduce, expected vs. actual.</p>
+        <p>Six defects documented with severity, steps to reproduce, expected vs. actual results, and suggested fixes — from a dashboard metric miscount to accessibility issues at high browser zoom and with keyboard-only navigation.</p>
       </div>
-      <div class="mini-card placeholder">
+      <div class="mini-card">
         <p class="num">EXP</p>
-        <h4>Exploratory Testing</h4>
-        <p>Add exploratory testing notes or session charters here.</p>
-      </div>
-      <div class="mini-card placeholder">
-        <p class="num">PLAN</p>
-        <h4>Test Plans</h4>
-        <p>Add a test plan document here.</p>
+        <h4>Exploratory &amp; Regression</h4>
+        <p>An exploratory session charter plus targeted accessibility testing that surfaced six defects total, and a regression cycle tracking each one back to its related test case.</p>
       </div>
     </div>
   </div>
@@ -400,39 +455,63 @@
 
     <div class="resume-box">
       <p class="eyebrow" style="margin-bottom:4px;">Professional Summary</p>
-      <p style="color:var(--ink-soft);">Recent Computer Information Systems graduate with a strong foundation in software testing, web development, SQL, and application support. Hands-on experience testing, troubleshooting, deploying, and supporting web applications through academic and personal projects. Detail-oriented with excellent analytical, documentation, and communication skills developed through more than 13 years working in quality-focused, fast-paced environments.</p>
+      <p style="color:var(--ink-soft);">Computer Information Systems graduate with a 3.77 GPA, a Software Developer Certificate, and hands-on experience building, testing, deploying, and supporting web applications. Strongest in SQL, with additional experience in Django, JavaScript, relational database design, Git workflows, Linux/Unix, and software testing. Brings more than 13 years of quality-focused operations and leadership experience, including training, inventory analysis, root-cause investigation, documentation, and cross-functional problem solving.</p>
 
       <h3>Technical Skills</h3>
+      <p style="font-weight:600;color:var(--ink);margin:14px 0 6px;">Languages</p>
       <ul class="skill-chips">
-        <li>Software Testing</li><li>Functional Testing</li><li>UAT</li><li>Test Cases</li>
-        <li>Defect Documentation</li><li>SQL</li><li>MySQL</li><li>GitLab</li>
-        <li>Visual Studio</li><li>HTML</li><li>CSS</li><li>JavaScript</li>
-        <li>Microsoft Excel</li><li>Reporting</li><li>Root Cause Analysis</li>
+        <li>SQL</li><li>Python</li><li>Java</li><li>JavaScript</li><li>PHP</li><li>TypeScript</li><li>C++</li><li>HTML</li><li>CSS</li>
+      </ul>
+      <p style="font-weight:600;color:var(--ink);margin:14px 0 6px;">Frameworks &amp; Databases</p>
+      <ul class="skill-chips">
+        <li>Django</li><li>Spring Framework</li><li>React</li><li>Bootstrap</li><li>MySQL</li><li>SQLite</li>
+      </ul>
+      <p style="font-weight:600;color:var(--ink);margin:14px 0 6px;">Tools &amp; Platforms</p>
+      <ul class="skill-chips">
+        <li>Git</li><li>GitHub</li><li>GitLab</li><li>Docker</li><li>VS Code</li><li>DBeaver</li><li>MySQL Workbench</li>
+        <li>Linux/Unix</li><li>Bash</li><li>SSH</li><li>PythonAnywhere</li><li>Netlify</li><li>Cloudflare</li>
+      </ul>
+      <p style="font-weight:600;color:var(--ink);margin:14px 0 6px;">Software Quality &amp; Analysis</p>
+      <ul class="skill-chips">
+        <li>Functional Testing</li><li>UAT</li><li>Test Cases</li><li>Defect Documentation</li><li>Debugging</li>
+        <li>Agile</li><li>SDLC</li><li>Systems Analysis</li><li>UML</li><li>Requirements Gathering</li><li>REST APIs</li>
+      </ul>
+      <p style="font-weight:600;color:var(--ink);margin:14px 0 6px;">Additional</p>
+      <ul class="skill-chips">
+        <li>Cisco Packet Tracer</li><li>AI-assisted development (ChatGPT, Codex, Claude)</li>
       </ul>
 
       <h3>Projects</h3>
       <p class="role">Indian Creek Cycle Rentals — Capstone Project</p>
       <p class="role-meta">May 2026 · indiancreekcycles.com</p>
       <ul>
-        <li>Collaborated with a development team to design, test, deploy, and support a web application.</li>
-        <li>Identified, documented, and verified fixes for application issues.</li>
-        <li>Utilized GitLab for source control and worked with SQL databases throughout development.</li>
-        <li>Managed hosting, domain configuration, website updates, and tested functionality across pages and devices to help ensure a reliable user experience.</li>
+        <li>Collaborated with a development team to design, build, test, deploy, and support a Django bicycle-rental application using Python, SQLite, HTML, CSS, JavaScript, and GitLab.</li>
+        <li>Identified and documented defects, verified fixes, worked with SQL data, and managed hosting, domain configuration, updates, and cross-device functionality.</li>
       </ul>
-      <p class="role">MarcGarciaTrumpet.com — Personal Website</p>
+      <p class="role">KatieGarcia.dev — Developer Portfolio</p>
+      <p class="role-meta">2026</p>
+      <ul>
+        <li>Built and deployed a portfolio that presents software projects, technical skills, and SQL work using Git-based version control, custom-domain configuration, and cloud hosting.</li>
+      </ul>
+      <p class="role">MarcGarciaTrumpet.com — Client Website</p>
       <p class="role-meta">June 2026</p>
       <ul>
-        <li>Designed, developed, deployed, and maintained a responsive website for a professional trumpet performer and educator.</li>
-        <li>Managed hosting, domain configuration, website updates, and tested functionality across pages and devices to help ensure a reliable user experience.</li>
+        <li>Designed, developed, deployed, and maintain a responsive website for a professional trumpet performer and educator; manage hosting, domain configuration, updates, and functional testing.</li>
+      </ul>
+      <p class="role">Shopping Tracker Database — SQL/MySQL/DBeaver</p>
+      <p class="role-meta">July 2026</p>
+      <ul>
+        <li>Designed a relational database with normalized tables, primary and foreign keys, joins, queries, and CRUD operations to organize and retrieve shopping data.</li>
       </ul>
 
       <h3>Education</h3>
       <p class="role">Associate Degree, Computer Information Science</p>
-      <p class="role-meta">Johnson County Community College, 2026</p>
+      <p class="role-meta">Johnson County Community College, 2026 · GPA: 3.77</p>
       <p class="role">Certificate — Computer Information Systems: Software Developer</p>
       <p class="role-meta">Johnson County Community College, 2026</p>
+      <p style="color:var(--ink-soft); font-size:14.5px; margin:6px 0 16px;">Relevant Coursework: Systems Analysis &amp; Design, Database Management, Java Programming, Object-Oriented Programming, PHP/MySQL Web Development, Unix/Linux, JavaScript, Big Data Architecture, Software Testing, Capstone Project</p>
       <p class="role">Bachelor of Arts in Music</p>
-      <p class="role-meta">Truman State University, 2013</p>
+      <p class="role-meta">Truman State University, 2013 · GPA: 3.65</p>
 
       <h3>Professional Experience</h3>
       <p class="role">Walmart Distribution Center — Kansas City, MO</p>

@@ -157,6 +157,23 @@ section{ padding:96px 0; }
 
 /* ---------- hero ---------- */
 .hero{ padding-top:76px; padding-bottom:88px; }
+.hero-grid{ display:grid; grid-template-columns:1.3fr .7fr; gap:48px; align-items:center; }
+@media (max-width:860px){ .hero-grid{ grid-template-columns:1fr; } }
+.stack-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:28px;
+  box-shadow:var(--shadow);
+}
+.stack-card h3{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--amber-deep);
+  margin:0 0 16px;
+}
 .hero .kicker{
   font-family:var(--mono);
   font-size:13px;
@@ -386,6 +403,7 @@ footer{
   box-shadow:var(--shadow); margin:40px 0;
 }
 .shot-frame img{ width:100%; }
+.shot-frame.small{ max-width:640px; margin-left:auto; margin-right:0; }
 
 /* ---------- code blocks ---------- */
 .code-block{
