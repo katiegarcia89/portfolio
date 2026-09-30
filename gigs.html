@@ -55,7 +55,7 @@
 
     <div class="wrap gigs-content">
       <div class="section-head">
-       <!-- <p class="eyebrow">Book a Gig</p>-->
+        <!-- <p class="eyebrow">Book a Gig</p>-->
         <h2 class="section-title">Let's make some noise</h2>
       </div>
 
@@ -77,8 +77,8 @@
             href="mailto:Katie.Garcia.C@gmail.com?subject=Gig%20Inquiry&body=Event%20date%3A%0AVenue%2Flocation%3A%0AInstrument(s)%20needed%3A%0ASet%20length%2Fdetails%3A%0A">Request
             a date</a>
           <a class="btn btn-outline" href="contact.html">Other ways to reach me</a>-->
-        </div>
       </div>
+    </div>
     </div>
   </section>
 
@@ -86,7 +86,7 @@
   <section style="background:var(--paper-dim);">
     <div class="wrap">
       <div class="section-head">
-       <!-- <p class="eyebrow">When I'm Playing</p>-->
+        <!-- <p class="eyebrow">When I'm Playing</p>-->
         <h2 class="section-title">Upcoming performances.</h2>
         <p>A quick look at where I'm playing this month. Reach out through the form above if you'd like to catch a
           show or talk about booking a date of your own.</p>
@@ -98,8 +98,10 @@
           style="border: 0" width="800" height="600" frameborder="0" scrolling="no">"
           title="Katie's full gig calendar" loading="lazy"></iframe>
       </div>
-      <form class="booking-form" name="booking-request" method="POST" netlify data-netlify="true"
+      <form class="booking-form" name="booking-request" method="POST" action="/thank-you.html" data-netlify="true"
         netlify-honeypot="bot-field">
+        <!--<form class="booking-form" name="booking-request" method="POST" netlify data-netlify="true"
+        netlify-honeypot="bot-field">-->
         <input type="hidden" name="form-name" value="booking-request">
         <!--<p class="hidden-field">
                     <label>Leave this blank: <input name="bot-field"></label>
